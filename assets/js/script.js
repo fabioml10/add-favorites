@@ -40,6 +40,10 @@ async function fecthCountries() {
     return { id: numericCode, name: translations.pt, flag, population, formattedPopulation: formatNumber(population) }
   })
 
+  manualCountries.sort((a, b) => {
+    return a.name.localeCompare(b.name)
+  })
+
   render()
 }
 
@@ -58,9 +62,9 @@ function renderCountryList() {
     const { id, name, flag, formattedPopulation } = country
 
     let countryHTML = `
-      <div class="d-flex">
-        <div>
-          <a id="${id}" class="btn add-country">+</a>
+      <div class="d-flex row">
+        <div class="d-flex btn-container add-country">
+          <a id="${id}" class="btn">+</a>
         </div>
         <div>
           <img src="${flag}" class="flag" alt="Bandeira do ${name}">
@@ -87,9 +91,9 @@ function renderFavoriteList() {
     const { id, name, flag, formattedPopulation } = country
 
     let favoriteHTML = `
-      <div class="d-flex">
-        <div>
-          <a id="${id}" class="btn remove-country">-</a>
+      <div class="d-flex row">
+      <div class="d-flex btn-container remove-country">
+          <a id="${id}" class="btn">-</a>
         </div>
         <div>
           <img src="${flag}" class="flag" alt="Bandeira do ${name}">

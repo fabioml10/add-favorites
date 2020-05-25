@@ -3,16 +3,16 @@
   list-style: none;
 }
 
-li {
+.row {
   margin-bottom: 10px;
 }
 
-.btn {
-  display: block;
+.btn-container {
   width: 50px;
-  height: 100%;
-  text-decoration: none;
   margin-right: 10px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
 }
 
 .add-country {
@@ -22,7 +22,12 @@ li {
 
 .remove-country {
   background-color: darkred;
-  color: white
+  color: white;
+
+}
+
+.btn {
+  text-decoration: none;
 }
 
 .d-flex{
